@@ -26,14 +26,14 @@ def dataValidity(string):
         
         if node != "cid":
             if node == 'byr':
-                toMatch = re.compile('(\d+)')
+                toMatch = re.compile(r'(\d+)')
                 if toMatch.match(data) and len(data) == 4:
                     if int(data) in range(1920, 2003):
                         checkPass += 1
                     else:
                         print('FAULT IN BYR')
             if node == 'iyr':
-                toMatch = re.compile('(\d+)')
+                toMatch = re.compile(r'(\d+)')
                 if toMatch.match(data) and len(data) == 4:
                     if int(data) in range(2010, 2021):
                         checkPass += 1
@@ -41,7 +41,7 @@ def dataValidity(string):
                         print('FAULT IN IYR')
 
             if node == 'eyr':
-                toMatch = re.compile('(\d+)')
+                toMatch = re.compile(r'(\d+)')
                 if toMatch.match(data) and len(data) == 4:
                     if int(data) in range(2020, 2031):
                         checkPass += 1
@@ -60,8 +60,8 @@ def dataValidity(string):
                 else:
                     print('FAULT IN HGT')
             if node == 'hcl':
-                toMatch = re.compile('^#[0-9a-f]{6}')
-                isMatch = toMatch.match(data)
+                toMatch = re.compile(r'^#[0-9a-f]{6}')
+#                isMatch = toMatch.match(data)
                 if toMatch and len(data) == 7:
                     checkPass += 1
                 else:
@@ -72,7 +72,7 @@ def dataValidity(string):
                 else:
                     print('FAULT IN ECL')
             if node == 'pid':
-                toMatch = re.compile('(\d+)')
+                toMatch = re.compile(r'(\d+)')
                 if toMatch.match(data) and len(data) == 9:
                     checkPass += 1
                 else:
